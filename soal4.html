@@ -1,0 +1,40 @@
+<html>
+
+<head>
+        
+</head>
+<body>
+   
+   <center><h1> <p id="tes"> COUNTDOWN START!!</p></h1> </center>
+   <script>
+        
+        var waktu = prompt("Masukkan waktu yang anda inginkan dalam detik");
+        var jam,menit,detik;
+        
+        function countDown (waktu)
+        {
+            var int = setInterval(function () {
+            jam     = Math.floor(waktu/3600); 
+            menit   = Math.floor((waktu-(3600*jam))/60);
+            detik   = waktu-((3600*jam)+(60*menit));    
+
+            document.getElementById("tes").innerHTML = jam+ " HOUR "+menit+" MINUTES "+detik+" SECONDS"; 
+            waktu-- || clearInterval(int);    
+            }, 1000);
+        }
+
+        countDown(waktu);
+        
+        
+            
+    
+
+
+        
+        
+    
+  </script>
+  
+</body>
+    
+</html>

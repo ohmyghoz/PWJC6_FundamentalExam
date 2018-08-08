@@ -1,0 +1,74 @@
+<html>
+
+
+
+<head>
+    <script>
+        var database = [
+            {
+                username:"ohmyghoz",
+                password:"abcd"
+            },
+            {
+                username:"vincentkeren",
+                password:"123456"
+            },
+            {
+                username:"admin",
+                password:"admin"
+            },
+            {
+                username:"ryansetiawan",
+                password:"iloveagus"
+            },
+        ]
+
+        var datasize = database.length;
+
+
+        function login()
+        {
+            let username = document.getElementById("username").value ;
+            let pass = document.getElementById("pass").value;
+            var salah = 0;
+            var benar = 0;
+            for(var i=0;i<datasize;i++)
+            {
+                if (database[i].username == username && database[i].password == pass)
+                {
+                   benar = 1;  
+                }
+                else
+                {
+                  salah=1;
+                }
+            }
+
+            if(salah==1&&benar==0) //kalau alert dibuat dalam loop, dia akan muncul lebih dari 1x
+            {
+                alert("Username atau Password anda salah");
+            }
+            else
+            {
+                alert("Anda berhasil Login");
+            }
+        }
+
+        
+
+    </script>    
+
+</head>
+
+<body>
+    <form id="login">
+            Silakkan masukkan username dan password anda <br><br>
+            username: <input type="text" id="username">  <br>
+            password: <input type="password" id="pass">
+    </form>    
+    <button onclick="login()"> Login </button>
+
+
+</body>
+
+</html>
